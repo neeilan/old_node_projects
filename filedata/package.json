@@ -1,0 +1,24 @@
+{
+  "name": "filedata",
+  "version": "1.0.0",
+  "description": "a file metadata parser",
+  "main": "filedata.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neeilan/filedata.git"
+  },
+  "author": "neeilan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neeilan/filedata/issues"
+  },
+  "homepage": "https://github.com/neeilan/filedata#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "multer": "^1.1.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,35 @@
+{
+  "name": "neeilbars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neeilan/bars.git"
+  },
+  "author": "neeilan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neeilan/bars/issues"
+  },
+  "homepage": "https://github.com/neeilan/bars#readme",
+  "dependencies": {
+    "connect-mongo": "^1.1.0",
+    "cookie-parser": "^1.4.1",
+    "crypto": "0.0.3",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "mongoose": "^4.4.12",
+    "oauth-1.0a": "^1.0.1",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.0",
+    "request": "^2.72.0",
+    "shortid": "^2.2.6",
+    "yelp": "^1.0.1"
+  }
+}

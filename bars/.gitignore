@@ -1,0 +1,4 @@
+config/yelpAuth.js
+node_modules/
+data/
+config/auth.js

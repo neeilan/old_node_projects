@@ -1,0 +1,44 @@
+
+body {
+    margin-bottom: 50px;
+    min-width: 400px;
+    
+}
+.container {
+    text-align: center;
+}
+
+.active {
+    color: white;
+}
+
+.navbar {
+    text-align: center;
+}
+
+.resultsContainer {
+    min-width: 550px;
+}
+.business {
+    display: inline-block;
+    width: 24%;
+    min-width: 250px;
+    background: #eeeeee;
+    padding: 20px 10px 20px 10px;
+    margin: 5px;
+}
+
+.business:hover {
+    background: #e0e0e0;
+}
+
+.searchimg {
+    border-radius: 50%;
+    
+}
+
+#mainSearch{
+    
+    width: 70%;
+    margin: 150px auto auto auto;
+}
