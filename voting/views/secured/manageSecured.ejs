@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Manage Polls</title>
+     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type = "text/css" href="/styles/style.css"/>
+    
+</head>
+<body>
+    <nav class="navbar navbar-default">
+          <div class="container">
+              <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Create Poll</a></li>
+                <li class="active"><a href="/manage">Manage Polls</a></li>
+              </ul>
+               <ul class="nav navbar-nav navbar-right">
+        <li><a href="/auth/logout">Log Out</a></li>
+      
+      </div>
+    </nav>
+    <div class = "container">
+            <h2>Manage Polls</h2>
+            <hr>
+            <% for(var i=0; i<list.length; i++) {%>
+            <div class="col-md-8 col-md-offset-2 managePoll">
+                <div class="well">
+                    <h4><a href='/poll/<%=list[i].id%>'><%=list[i].title%></a></h4>
+                    <table class = "table">
+                        <tr>
+                            <th>Choice</th>
+                            <th>Votes</th>
+                        </tr>
+                        <% for (var j = 0; j < list[i].data.length; j++) {%>
+                            <tr>
+                                <td>
+                                   <%= list[i].data[j].label %> 
+                                </td>
+                                <td>
+                                    <%= list[i].data[j].value %>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </table>
+                    <a  href='/delete/<%=list[i].id%>' class="btn btn-danger">Delete</a>
+                </div>
+            </div><br/>
+            <% } %>
+ 
+    </div>
+</body>
+                            
+          
+                        
+                        
+                        

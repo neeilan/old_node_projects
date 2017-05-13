@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<head>
+    <title>neeilVote</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type = "text/css" href="/styles/style.css"/>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+          <div class="container">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/create">Create Poll</a></li>
+                <li><a href="/manage">Manage Polls</a></li>
+              </ul>
+               <ul class="nav navbar-nav navbar-right">
+        <li><a href="/auth/logout">Log Out</a></li>
+      
+      </div>
+    </nav>     
+    <div class = "container">
+        <div class="jumbotron text-center">
+            <h2>neeilVote</h2>
+            <a href="/auth/logout" class="btn btn-danger">Logout</a>
+             <a href="/create" class="btn btn-default">Create a poll</a>
+             <a href="/manage" class="btn btn-default">Manage my Polls</a>
+            <br>
+        </div>
+        <% for(var i=0; i<list.length; i++) {%>
+            	<a class= "btn btn-default pollbtn" href='/poll/<%=list[i].id%>'><%=list[i].title%></a><br>
+        <% } %>
+ 
+    </div>
+</body>

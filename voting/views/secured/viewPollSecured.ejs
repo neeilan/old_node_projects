@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<head>
+    <title><%=title%></title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type = "text/css" href="/styles/style.css"/>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Create Poll</a></li>
+                <li><a href="/manage">Manage Polls</a></li>
+              </ul>
+               <ul class="nav navbar-nav navbar-right">
+        <li><a href="/auth/logout">Log Out</a></li>
+      
+      </div>
+    </nav>
+    
+    <div class = "container">
+    <h2><%= title %></h2>
+    <hr>
+    <div id = "canvasContainer">
+    <canvas id="chart" width="400" height="400"></canvas>
+    </div>
+    
+    <form id= "choicesForm" action="/vote/<%=id%>" method="get">
+        <div id="oldOptions">
+        <% for(var i=0; i<data.length; i++) {%>
+        <input class= "radiobtn" type = 'radio' name = 'option' value = '<%= data[i].label %>'><%= data[i].label %></input><br/>
+        <% } %>
+        </div>
+        <div id="newOption"></div><br/>
+        <button id="newOptionBtn" type="button">Custom Option</button><br/>
+        <button id = "vote" type="Submit">Vote</button>
+    </form>
+            <button id="fbShare" onclick="window.location.assign('http://www.facebook.com/sharer.php/?u='+window.location.href)">Share on Facebook</button>
+
+    </div>
+    
+<script type = "text/javascript" src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        var x = JSON.parse('<%-JSON.stringify(data)%>');
+        for (var i in x){
+            x[i].color = "#b2dfdb";
+            x[i].highlight = "#4db6ac";
+        }
+        
+        $("#newOptionBtn").click(function(){
+            document.getElementById('newOption').innerHTML+='<input type="text" id="customOption" name="customOption" /><br/>';
+            document.getElementById('oldOptions').style.display = "none";
+            document.getElementById('newOptionBtn').disabled = true;
+            
+        })
+        
+        
+        var ctx = document.getElementById("chart").getContext("2d");
+        var myNewChart = new Chart(ctx).Doughnut(x);
+        var form = $("#choicesForm");
+        $(form).submit(function(event) {
+          event.preventDefault();
+        var option = $('input[name=option]:checked', '#choicesForm').val() || $("#customOption").val();
+        if (option){
+        var url = window.location.href.replace("poll","vote")+"?"+form.serialize();
+        $.ajax({
+            type: 'GET',
+            url: url
+        }).done(function(data) {
+          for (var i in data){
+            data[i].color = "#b2dfdb";
+            data[i].highlight = "#4db6ac";
+        }
+        //redo graph
+        $("#canvasContainer").html('<canvas id="newChart" width="400" height="400"></canvas>');
+        var ctx = document.getElementById("newChart").getContext("2d");
+        var newChart = new Chart(ctx).Doughnut(data);
+        })
+        //message
+        $("#choicesForm").html("You successfully voted for "+option);
+        }
+      })
+    })
+    </script>
+</body>

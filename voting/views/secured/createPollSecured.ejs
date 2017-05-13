@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Create a poll</title>
+    <script type = "text/javascript" src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type = "text/css" href="/styles/style.css"/>
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+          <div class="container">
+              <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li class="active"><a href="/create">Create Poll</a></li>
+                <li><a href="/manage">Manage Polls</a></li>
+              </ul>
+               <ul class="nav navbar-nav navbar-right">
+        <li><a href="/auth/logout">Log Out</a></li>
+      
+      </div>
+    </nav>    
+    <div class = "container">
+        <h2>Create Poll</h2>
+        <hr>        
+    <form id= "createForm" action="/create/submit" method="get">
+    Poll Title<br><br>
+    <input class= "textInput" type = "text" name = "title" placeholder="What is your favorite color?" </input>
+    <hr/>
+    Choices<br><br>
+    <div id = "choices">
+    <input class= "textInput" type = "text" name = "1" placeholder="Enter a choice"</input> <br/>
+    <input class= "textInput" type = "text" name = "2" placeholder="Enter a choice"</input> <br/>
+    <input class= "textInput" type = "text" name = "3" placeholder="Enter a choice"</input> <br/>
+    <input class= "textInput" type = "text" name = "4" placeholder="Enter a choice"</input> <br/>
+    </div>
+    <br/> 
+    <button id = "submit" type="submit">Create Poll</button>
+    <br/>
+    <button id="newOptionBtn" type="button">Add option</button><br/>
+    </form>
+    </div>
+    
+
+    
+    <script>
+        $(document).ready(function(){
+        var counter = 4;
+        $("#newOptionBtn").click(function(){
+            counter++;
+            $('#choices').append('<input class= "textInput" type = "text" name="'+counter+'" placeholder="Enter a choice"</input><br/>');
+            })
+        });
+    </script>
+</body>
