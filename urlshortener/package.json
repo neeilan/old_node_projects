@@ -1,0 +1,26 @@
+{
+  "name": "shorturl",
+  "version": "1.0.0",
+  "description": "url shortener",
+  "main": "shorturl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neeilan/shortURL.git"
+  },
+  "author": "neeilan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neeilan/imgsearch/issues"
+  },
+  "homepage": "https://github.com/neeilan/imgsearch#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongodb": "^2.1.7",
+    "shortid": "^2.2.4",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {}
+}
