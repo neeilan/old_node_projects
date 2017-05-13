@@ -1,0 +1,23 @@
+{
+  "name": "reqparser",
+  "version": "1.0.0",
+  "description": "Header metadata parser",
+  "main": "reqparse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neeilan/NodeRequestParser.git"
+  },
+  "author": "neeilan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neeilan/NodeRequestParser/issues"
+  },
+  "homepage": "https://github.com/neeilan/NodeRequestParser#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {}
+}

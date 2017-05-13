@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Neeilan's Image Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<style>
+    .imgitem {
+        float: left;
+        display: block;
+        border: solid 2px white;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row" style="text-align:center">
+            <div class="col-md-8 col-md-offset-2">
+                <br>
+                <h2>Neeilan's Image Search</h2>
+                <hr>
+                <p>A server-side image search abstraction layer, built with Node, Express and MongoDB</p>
+
+                <form action="javascript: makeRequest();" method="GET" onsubmit="return validate();">
+                    <input style="width:40%; padding:10px" type="text" id="term" name="term" placeholder="Search term" />
+                    <br>
+                    <input style="width:40%; padding:10px" type="text" id="offset" name="offset" placeholder="Offset for pagination (optional)" />
+                    <br>
+                    <input style="margin:5px" class="btn btn-primary" type="submit" value="Search" />
+                    <a class="btn btn-info" href="recent">Recent</a>
+                    <a onclick="callAPI();" class="btn btn-default">API Call</a>
+                </form>
+                <hr>
+                <div id="results"></div>
+            </div>
+        </div>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="https://npmcdn.com/masonry-layout@4.0.0/dist/masonry.pkgd.min.js"></script>
+        <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
