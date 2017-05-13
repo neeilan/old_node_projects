@@ -1,0 +1,27 @@
+{
+  "name": "timestamp",
+  "version": "1.0.0",
+  "description": "converts unix time stamps to natural dates and vice versa",
+  "main": "tsserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neeilan/timestamp.git"
+  },
+  "author": "neeilan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neeilan/timestamp/issues"
+  },
+  "engines": {
+    "node": "4.2.4"
+  },
+  "homepage": "https://github.com/neeilan/timestamp#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  }
+}

@@ -1,0 +1,53 @@
+form {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 35%;
+    padding: 10px;
+}
+
+#stocksList {
+    width: 50%;
+    padding: 10px;
+    margin: auto;
+}
+
+hr {
+    width: 80%;
+}
+
+.container {
+    color:   #37474f;
+    text-align: center;
+    font-family: Helvetica, Arial;
+}
+
+.stock{
+    background: #eeeeee;
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;
+}
+
+button {
+    margin: 7.5px;
+    padding: 10px;
+    background: #ff8a65;
+    min-width: 50px;
+    color: white;
+    border: none;
+}
+
+.remove {
+    background: #607d8b;
+}
+.remove:hover{
+    background: #37474f;
+}
+
+button:hover {
+    background: #f4511e;
+}
